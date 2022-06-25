@@ -81,7 +81,7 @@
               <iron-icon icon="chevron-right"></iron-icon>
               <span class="click" on-tap="togroup">[[newdata.category.name]]</span>
               <iron-icon icon="chevron-right"></iron-icon>
-              <span><em>Choose a project</em></span>
+              <span><em>Выбор проекта</em></span>
           </div>
           <iron-list id="list" items="[[newdata.category.data]]" as="project">
               <template>
@@ -134,10 +134,10 @@
               this.fire('iron-signal', {name: 'createtypes'});
               this.set('selected', 3);
           } else if (project.slug === "obs") {
-              this.set('newdata.typedata', {type: {id: "text", name: "Text"}, resource: {id: "obs", name: "Open Bible Stories"}, format: "markdown", allowed: true});
+              this.set('newdata.typedata', {type: {id: "text", name: "Текст"}, resource: {id: "obs", name: "Открытые Библейские Истории"}, format: "markdown", allowed: true});
               this.fire('create');
           } else {
-              this.set('newdata.typedata', {type: {id: "text", name: "Text"}, resource: {id: "reg", name: "Regular"}, format: "usfm", allowed: true});
+              this.set('newdata.typedata', {type: {id: "text", name: "Текст"}, resource: {id: "reg", name: "Обычный"}, format: "usfm", allowed: true});
               this.fire('create');
           }
 

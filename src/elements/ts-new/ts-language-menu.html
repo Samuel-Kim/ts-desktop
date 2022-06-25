@@ -86,7 +86,7 @@
 
       <div id="main">
           <div id="header">
-              <input is="iron-input" id="input" bind-value="{{query}}" on-input="updateList" placeholder="Choose target language">
+              <input is="iron-input" id="input" bind-value="{{query}}" on-input="updateList" placeholder="Выберите целевой язык">
               <iron-icon class="click" icon="search" on-tap="focussearch"></iron-icon>
           </div>
           <iron-list id="list" items="[[filtered]]" as="language">
@@ -217,7 +217,7 @@
                   this.fire('iron-signal', {name: 'createtypes'});
                   this.set('selected', 3);
               } else {
-                  this.set('newdata.typedata', {type: {id: "text", name: "Text"}, resource: {id: "reg", name: "Regular"}, format: "usfm", allowed: true});
+                  this.set('newdata.typedata', {type: {id: "text", name: "Текст"}, resource: {id: "reg", name: "Обычный"}, format: "usfm", allowed: true});
                   this.fire('create');
               }
               this.reset();

@@ -123,7 +123,7 @@
         <div id="header">
             <div id="title">
                 <iron-icon class="click" icon="arrow-back" on-tap="gohome"></iron-icon>
-                <span class="click" on-tap="gohome">Home</span>
+                <span class="click" on-tap="gohome">Главная</span>
                 <iron-icon icon="chevron-right"></iron-icon>
                 <span>[[createtitle(route)]]</span>
             </div>
@@ -148,7 +148,7 @@
                 <p>This project already exists.  If you continue with this change, the two projects will be merged together.</p>
             </div>
             <div class="buttons">
-                <paper-button dialog-dismiss>Cancel</paper-button>
+                <paper-button dialog-dismiss>Отмена</paper-button>
                 <paper-button on-tap="firechange">Continue</paper-button>
             </div>
         </paper-dialog>
@@ -243,11 +243,11 @@
             var title = "";
             if (route === "new") {
                 if (this.importdata.importing) {
-                    title = "Import Project";
+                    title = "Импорт проекта";
                 } else if (this.changedata.changing) {
-                    title = "Change Language";
+                    title = "Сименить язык";
                 } else {
-                    title = "New Project";
+                    title = "Новый проект";
                 }
             }
             return title;
@@ -266,7 +266,7 @@
             var projectarray = this.projectlist;
 
             mythis.set('options', {});
-            mythis.set('options.body', "Creating project. Please wait...");
+            mythis.set('options.body', "Creating project. Пожалуйста, подождите...");
             mythis.set('options.loading', true);
             mythis.fire('iron-signal', {name: 'openloading'});
 
