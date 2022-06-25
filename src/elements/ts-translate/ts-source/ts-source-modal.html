@@ -140,7 +140,7 @@
 
         <div id="contain">
             <div id="header">
-                <input is="iron-input" id="input" bind-value="{{query}}" on-input="organizeSources" placeholder="Choose source translations">
+                <input is="iron-input" id="input" bind-value="{{query}}" on-input="organizeSources" placeholder="Выберите исходный перевод">
                 <paper-icon-button icon="search" on-tap="focussearch"></paper-icon-button>
             </div>
 
@@ -162,7 +162,7 @@
                         </template>
                         <template is="dom-if" if="{{source.updating}}">
                             <div>
-                                <span>Updating source data. Please wait...</span>
+                                <span>Updating source data. Пожалуйста, подождите...</span>
                             </div>
                             <div>
                                 <paper-spinner active></paper-spinner>
@@ -184,7 +184,7 @@
                         </template>
                         <template is="dom-if" if="{{source.updating}}">
                             <div>
-                                <span>Activating this source. Please wait...</span>
+                                <span>Activating this source. Пожалуйста, подождите...</span>
                             </div>
                             <div>
                                 <paper-spinner active></paper-spinner>
@@ -209,7 +209,7 @@
                         </template>
                         <template is="dom-if" if="{{source.updating}}">
                             <div>
-                                <span>Downloading source data. Please wait...</span>
+                                <span>Downloading source data. Пожалуйста, подождите...</span>
                             </div>
                             <div>
                                 <paper-spinner active></paper-spinner>
@@ -222,8 +222,8 @@
             <div id="footer">
                 <paper-button on-tap="gotoupdate">Exit to Update Source Text List</paper-button>
                 <div>
-                    <paper-button on-tap="cancel">Cancel</paper-button>
-                    <paper-button on-tap="confirm">Confirm</paper-button>
+                    <paper-button on-tap="cancel">Отмена</paper-button>
+                    <paper-button on-tap="confirm">Подтвердить</paper-button>
                 </div>
             </div>
 
