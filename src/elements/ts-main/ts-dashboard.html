@@ -425,7 +425,7 @@
           };
 
           mythis.$.update.close();
-          mythis.showLoadingMessage('Updating List of Target Languages. This may take a while. Please wait...');
+          mythis.showLoadingMessage('Updating List of Target Languages. This may take a while. Пожалуйста, подождите...');
           mythis.set('options.progress', true);
           mythis.set('options.value', 33);
 
@@ -476,7 +476,7 @@
           };
 
           mythis.$.update.close();
-          mythis.showLoadingMessage('Updating List of Source Texts. This may take a while. Please wait...');
+          mythis.showLoadingMessage('Updating List of Source Texts. This may take a while. Пожалуйста, подождите...');
           mythis.set('options.progress', true);
           mythis.set('options.value', 0);
 
@@ -512,7 +512,7 @@
           var mythis = this;
 
           mythis.$.update.close();
-          mythis.showLoadingMessage('Loading source texts. Please wait...');
+          mythis.showLoadingMessage('Loading source texts. Пожалуйста, подождите...');
 
           setTimeout(function() {
               mythis.set('route', 'updates');
@@ -523,7 +523,7 @@
           var mythis = this;
           var projectmeta = data.projectmeta;
 
-          mythis.showLoadingMessage('Deleting project.  Please wait...');
+          mythis.showLoadingMessage('Deleting project.  Пожалуйста, подождите...');
 
           setTimeout(function() {
               return App.projectsManager.deleteTargetTranslation(projectmeta)
@@ -553,7 +553,7 @@
           var newmanifest = changedata.newmeta;
 
           mythis.set('route', 'home');
-          mythis.showLoadingMessage('Changing project.  Please wait...');
+          mythis.showLoadingMessage('Changing project.  Пожалуйста, подождите...');
 
           setTimeout(function () {
               return Promise.resolve(true)
@@ -638,7 +638,7 @@
               mythis.set('route', 'home');
               mythis.$.translate.reset();
           }
-          mythis.showLoadingMessage("Importing. Please wait...");
+          mythis.showLoadingMessage("Importing. Пожалуйста, подождите...");
 
           setTimeout(function() {
               return App.utils.fs.mkdirs(tmpPath)
@@ -686,7 +686,7 @@
           }
 
           mythis.$.import.close();
-          mythis.showLoadingMessage('Importing. Please wait...');
+          mythis.showLoadingMessage('Importing. Пожалуйста, подождите...');
 
           setTimeout(function() {
               return App.importManager.extractBackup(filePath[0])
@@ -726,7 +726,7 @@
           var key = targetPath.split(path.sep).pop();
           var newmanifest = {};
 
-          mythis.showLoadingMessage("Importing. Please wait...");
+          mythis.showLoadingMessage("Importing. Пожалуйста, подождите...");
 
           setTimeout(function() {
               return Promise.resolve(true)
@@ -848,7 +848,7 @@
           var backupName = projectmeta.unique_id + '.' + timeString + '.tstudio';
           var backupPath = App.configurator.getUserPath('datalocation', 'backups', backupName);
 
-          mythis.showLoadingMessage('Importing.  Please wait...');
+          mythis.showLoadingMessage('Importing.  Пожалуйста, подождите...');
 
           setTimeout(function() {
               return Promise.resolve(true)
@@ -923,7 +923,7 @@
 
           mythis.set('importdata', {filepath: filePath[0]});
           mythis.$.import.close();
-          mythis.showLoadingMessage('Importing source text. Please wait...');
+          mythis.showLoadingMessage('Importing source text. Пожалуйста, подождите...');
 
           setTimeout(function() {
               return App.dataManager.checkForContainer(filePath[0])
@@ -942,7 +942,7 @@
           var mythis = this;
           var filePath = this.importdata.filepath;
 
-          mythis.showLoadingMessage('Importing source text. Please wait...');
+          mythis.showLoadingMessage('Importing source text. Пожалуйста, подождите...');
 
           setTimeout(function() {
               return App.dataManager.importContainer(filePath)
@@ -977,7 +977,7 @@
 
           mythis.$.export.close();
           mythis.set('options', {});
-          mythis.set('options.body', "Uploading Project.  Please wait...");
+          mythis.set('options.body', "Uploading Project.  Пожалуйста, подождите...");
           mythis.set('options.loading', true);
           loading.open();
 
@@ -1051,7 +1051,7 @@
           }
 
           mythis.$.export.close();
-          mythis.showLoadingMessage('Creating Project File.  Please wait...');
+          mythis.showLoadingMessage('Creating Project File.  Пожалуйста, подождите...');
 
           setTimeout(function() {
               return App.exportManager.backupTranslation(projectmeta, filePath)
@@ -1087,7 +1087,7 @@
           var current = this.route;
 
           mythis.$.print.close();
-          mythis.showLoadingMessage("Preparing to Print. Please wait...");
+          mythis.showLoadingMessage("Preparing to Print. Пожалуйста, подождите...");
           if (current === "translate") {
               mythis.fire('iron-signal', {name: 'translateleft'});
           }
@@ -1099,12 +1099,12 @@
               return Promise.resolve(true)
                   .then(function () {
                       if (options.includeImages) {
-                          mythis.set('options.body', "Downloading Images. Please wait...");
+                          mythis.set('options.body', "Downloading Images. Пожалуйста, подождите...");
                           var forceDownload = App.configurator.getUserSetting("resetimages");
                           App.configurator.setUserSetting("resetimages", false);
                           return App.printManager.downloadImages(forceDownload)
                               .then(function(){
-                                  mythis.set('options.body', "Extracting Images. Please wait...");
+                                  mythis.set('options.body', "Extracting Images. Пожалуйста, подождите...");
                                   return App.printManager.extractImages();
                               });
                       } else {
@@ -1112,7 +1112,7 @@
                       }
                   })
                   .then(function () {
-                      mythis.set('options.body', "Creating print preview. Please wait...");
+                      mythis.set('options.body', "Creating print preview. Пожалуйста, подождите...");
                       setTimeout(function() {
                           mythis.set('currentproject.printoptions', options);
                           mythis.$.preview.rendertext();
@@ -1167,7 +1167,7 @@
               return;
           }
 
-          mythis.showLoadingMessage("Exporting Project.  Please wait...");
+          mythis.showLoadingMessage("Exporting Project.  Пожалуйста, подождите...");
 
           setTimeout(function() {
               return App.exportManager.exportTranslation(translation, projectmeta, filePath, mediaServer)
@@ -1206,7 +1206,7 @@
 
           mythis.closeFeedback();
 
-          mythis.showLoadingMessage("Sending Feedback. Please wait...");
+          mythis.showLoadingMessage("Sending Feedback. Пожалуйста, подождите...");
 
           if(!email && this.currentuser.email && this.currentuser.email.indexOf('noreply.door43.org') === -1) {
               // use user's account email
