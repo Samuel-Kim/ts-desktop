@@ -192,34 +192,34 @@
         <ts-resource-display id="resourcedisplay" class="hide" chunks="[[currentproject.chunks]]" modestatus="{{modestatus}}" on-navigate="navigate" on-closeresource="closeresource"></ts-resource-display>
 
         <paper-dialog id="checklistpopup" class="popup" modal="true" entry-animation="scale-up-animation" exit-animation="scale-down-animation">
-            <h2>Chunk Checklist</h2>
+            <h2>Контрольный список фрагментов</h2>
             <div>
-                <p id="spaced">Are you sure you're Done with this chunk?</p>
-                <p class$="[[versecheck(currentproject.projectmeta)]]">I have placed the verses correctly</p>
-                <p>I have reviewed the words and meanings</p>
-                <p class$="[[standardcheck(currentproject.projectmeta)]]">I have reviewed the translationQuestions</p>
+                <p id="spaced">Вы уверены, что закончили с этим фрагментом?</p>
+                <p class$="[[versecheck(currentproject.projectmeta)]]">Я правильно расставил стихи</p>
+                <p>Я просмотрел слова и значения</p>
+                <p class$="[[standardcheck(currentproject.projectmeta)]]">Я просмотрел Вопросы</p>
             </div>
             <div class="buttons">
-                <paper-button dialog-dismiss>Cancel</paper-button>
-                <paper-button dialog-confirm on-tap="closechecklist">Confirm</paper-button>
+                <paper-button dialog-dismiss>Отмена</paper-button>
+                <paper-button dialog-confirm on-tap="closechecklist">Подтвердить</paper-button>
             </div>
         </paper-dialog>
 
         <paper-dialog id="editpopup" class="popup" modal="true" entry-animation="scale-up-animation" exit-animation="scale-down-animation">
-            <h2>Edit Chunk</h2>
+            <h2>Редактирование фрагмента</h2>
             <div>
-                <p>This chunk is done. Continue editing?</p>
+                <p>Этот фрагмент готов. Продолжить редактирование?</p>
             </div>
             <div class="buttons">
-                <paper-button dialog-dismiss>Dismiss</paper-button>
-                <paper-button dialog-confirm on-tap="closeedit">Edit</paper-button>
+                <paper-button dialog-dismiss>Отменить</paper-button>
+                <paper-button dialog-confirm on-tap="closeedit">Редактировать</paper-button>
             </div>
         </paper-dialog>
 
         <paper-dialog id="nodatapopup" class="popup" modal="true" entry-animation="scale-up-animation" exit-animation="scale-down-animation">
-            <h2>Missing Data</h2>
+            <h2>Потерянная информация</h2>
             <div>
-                <p>All fields are not complete.</p>
+                <p>Не все поля заполнены.</p>
             </div>
             <div class="buttons">
                 <paper-button dialog-dismiss>OK</paper-button>
@@ -228,11 +228,11 @@
 
         <paper-dialog id="note" class="popup" modal="true" entry-animation="scale-up-animation" exit-animation="scale-down-animation">
             <div id="noteheader">
-                <h2>Footnote</h2>
+                <h2>Сноска</h2>
             </div>
             <div id="notebody"></div>
             <div id="notefooter">
-                <paper-button dialog-dismiss>Dismiss</paper-button>
+                <paper-button dialog-dismiss>Отклонить</paper-button>
             </div>
         </paper-dialog>
 
@@ -399,11 +399,11 @@
                 var chunk = allchunks[data];
                 return App.projectsManager.saveTargetChunk(chunk, projectmeta)
                     .catch(function (err) {
-                        App.reporter.logError(err, 'Error saving chunk');
+                        App.reporter.logError(err, 'Ошибка при сохранении фрагмента');
                     });
             };
 
-            mythis.set('message', "Checking for Changes...");
+            mythis.set('message', "Проверка изменений...");
 
             return Promise.resolve(true)
                 .then(function () {
@@ -415,7 +415,7 @@
                                 mythis.set('saveoptions.chunks', []);
                                 return App.projectsManager.cleanProject(allchunks, projectmeta)
                                     .catch(function (err) {
-                                        App.reporter.logError(err, 'Error cleaning project');
+                                        App.reporter.logError(err, 'Ошибка очистки проекта');
                                     });
                             });
                     } else {
@@ -456,7 +456,7 @@
                             })
                             .catch(function (err) {
                                 mythis.set('options', {});
-                                mythis.set('options.title', "Auto Backup Failed");
+                                mythis.set('options.title', "Ошибка автозагрузки");
                                 mythis.set('options.body', err);
                                 mythis.set('options.loading', false);
                                 mythis.fire('iron-signal', {name: 'openloading'});
@@ -528,7 +528,7 @@
             var modal = this.$.modal;
 
             mythis.set('options', {});
-            mythis.set('options.body', "Loading source options. Please wait...");
+            mythis.set('options.body', "Loading source options. Пожалуйста, подождите...");
             mythis.set('options.loading', true);
             mythis.fire('iron-signal', {name: 'openloading'});
             mythis.savestate();
@@ -563,8 +563,8 @@
                                     }, 500);
                                 });
                         } else {
-                            mythis.set('options.title', "Loading Failed");
-                            mythis.set('options.body', "Cannot find sources. Try restarting app.");
+                            mythis.set('options.title', "Обновление не удалось");
+                            mythis.set('options.body', "Не могу найти источники. Попробуйте перезапустить приложение.");
                             mythis.set('options.loading', false);
                         }
                     });
@@ -741,7 +741,7 @@
             };
 
             mythis.set('options', {});
-            mythis.set('options.body', "Loading project. Please wait...");
+            mythis.set('options.body', "Загрузка проекта. Пожалуйста, подождите...");
             mythis.set('options.loading', true);
             mythis.fire('iron-signal', {name: 'openloading'});
 
@@ -761,7 +761,7 @@
                         .then(function (translation) {
                             mythis.set('currentproject.rawdata.main', translation);
                             if (projectmeta.type.id === "ta") {
-                                throw "At this time, translationAcademy translation projects are not supported.";
+                                throw "В настоящее время переводческие проекты translationAcademy не поддерживаются.";
                             }
                             var source = projectmeta.source_translations[projectmeta.currentsource];
 
@@ -776,12 +776,12 @@
                         })
                         .catch(function(err) {
                             App.reporter.logError(err);
-                            var errmessage = "An error occurred while trying to load this project";
+                            var errmessage = "Произошла ошибка при попытке загрузить этот проект";
                             if(err !== null) {
                                 errmessage = err;
                             }
                             mythis.set('route', 'home');
-                            mythis.set('options.title', "Project Load Failed");
+                            mythis.set('options.title', "Ошибка загрузки проекта");
                             mythis.set('options.body', errmessage);
                             mythis.set('options.loading', false);
                         });
@@ -792,7 +792,7 @@
         updatesources: function (event, data) {
             var mythis = this;
             mythis.set('options', {});
-            mythis.set('options.body', "Loading source. Please wait...");
+            mythis.set('options.body', "Loading source. Пожалуйста, подождите...");
             mythis.set('options.loading', true);
             mythis.fire('iron-signal', {name: 'openloading'});
             setTimeout(function() {
@@ -1107,7 +1107,7 @@
                 note = framenotes[0].content;
             }
             if (note.length) {
-                resources.push({title: "Notes", array: true, data: note});
+                resources.push({title: "Заметки", array: true, data: note});
             }
 
             if (wordlist && wordlist[frame.chapter] && wordlist[frame.chapter][frame.chunk]) {
@@ -1150,7 +1150,7 @@
             }
 
             if (words.length) {
-                resources.push({title: "Words", array: true, data: words});
+                resources.push({title: "Слова", array: true, data: words});
             }
 
             var frameques = questions.filter(function (ques) {
@@ -1169,7 +1169,7 @@
                 question = _.uniq(question, 'title');
             }
             if (question.length) {
-                resources.push({title: "Questions", array: true, data: question});
+                resources.push({title: "Вопросы", array: true, data: question});
             }
 
             var frameSimplifiedText = simplifiedTextObject.data.filter(function (chunk) {
@@ -1497,7 +1497,7 @@
             var mythis = this;
 
             mythis.set('options', {});
-            mythis.set('options.body', "Loading project. Please wait...");
+            mythis.set('options.body', "Loading project. Пожалуйста, подождите...");
             mythis.set('options.loading', true);
             mythis.fire('iron-signal', {name: 'openloading'});
 
@@ -1523,7 +1523,7 @@
             var mythis = this;
 
             mythis.set('options', {});
-            mythis.set('options.body', "Closing project. Please wait...");
+            mythis.set('options.body', "Closing project. Пожалуйста, подождите...");
             mythis.set('options.loading', true);
             mythis.fire('iron-signal', {name: 'openloading'});
 
@@ -1544,7 +1544,7 @@
 
             if (mythis.currentproject.projectmeta.source_translations.length || typeclass === "extant") {
                 mythis.set('options', {});
-                mythis.set('options.body', "Loading review page. Please wait...");
+                mythis.set('options.body', "Loading review page. Пожалуйста, подождите...");
                 mythis.set('options.loading', true);
                 mythis.fire('iron-signal', {name: 'openloading'});
                 setTimeout(function() {
