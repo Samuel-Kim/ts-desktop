@@ -79,14 +79,14 @@
 
         <div id="content">
             <div class="header">
-                <h2>Local User Profile</h2>
-                <p>Enter your full name or pseudonym.  This name will be added to the contributor list of all projects you work on.  This name will be visible to others.</p>
+                <h2>Локальный профиль пользователя</h2>
+                <p>Введите свое полное имя или псевдоним. Это имя будет добавлено в список участников всех проектов, над которыми вы работаете. Это имя будет видно другим.</p>
             </div>
             <div class="body">
-                <input is="iron-input" bind-value="{{newinfo.full_name}}" placeholder="Full Name or Pseudonym">
+                <input is="iron-input" bind-value="{{newinfo.full_name}}" placeholder="Полностью имя или псевдоним">
             </div>
             <div class="buttons">
-                <paper-button class="nofill" on-tap="gotologin">Login with Door43 Account</paper-button>
+                <paper-button class="nofill" on-tap="gotologin">Войти с учетной записью Door43</paper-button>
                 <paper-button raised class="fill" on-tap="local">Ok</paper-button>
             </div>
         </div>

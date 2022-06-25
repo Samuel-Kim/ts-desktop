@@ -58,7 +58,7 @@
                 <span id="backbutton">
                     <iron-icon class$="[[backclass(selected)]]" icon="arrow-back" on-tap="back"></iron-icon>
                 </span>
-                <span>User Profile</span>
+                <span>Учётная запись пользователя</span>
             </div>
         </div>
 
@@ -155,7 +155,7 @@
             }
 
             mythis.set('options', {});
-            mythis.set('options.body', "Verifying Login.  Please wait...");
+            mythis.set('options.body', "Verifying Login.  Пожалуйста, подождите...");
             mythis.set('options.loading', true);
             mythis.fire('iron-signal', {name: 'openloading'});
 
@@ -207,7 +207,7 @@
             }
 
             mythis.set('options', {});
-            mythis.set('options.body', "Creating Account.  Please wait...");
+            mythis.set('options.body', "Creating Account.  Пожалуйста, подождите...");
             mythis.set('options.loading', true);
             mythis.fire('iron-signal', {name: 'openloading'});
 
