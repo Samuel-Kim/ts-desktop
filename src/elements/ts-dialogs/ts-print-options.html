@@ -59,19 +59,19 @@
     <template>
 
         <div id="header">
-            <h2>Print/Export to PDF Options</h2>
+            <h2>Параметры печати/экспорта в PDF</h2>
             <h2><span>[[currentproject.projectmeta.project.name]]</span> - <span>[[currentproject.projectmeta.target_language.name]]</span></h2>
         </div>
         <div id="body">
-            <div id="image"><paper-checkbox id="imagebox"></paper-checkbox><span>Include images</span></div>
-            <div><paper-checkbox id="chunkbox" checked="true"></paper-checkbox><span>Include incomplete chunks</span></div>
-            <div><paper-checkbox id="doublespacebox"></paper-checkbox><span>Double space text</span></div>
-            <div><paper-checkbox id="justifybox"></paper-checkbox><span>Fully justify text</span></div>
-            <div id="page"><paper-checkbox id="pagebox"></paper-checkbox><span>New page for each chapter</span></div>
+            <div id="image"><paper-checkbox id="imagebox"></paper-checkbox><span>Включать изображения</span></div>
+            <div><paper-checkbox id="chunkbox" checked="true"></paper-checkbox><span>Включать неполные фрагменты</span></div>
+            <div><paper-checkbox id="doublespacebox"></paper-checkbox><span>Текст с двойным пробелом</span></div>
+            <div><paper-checkbox id="justifybox"></paper-checkbox><span>Выровнять текст по ширине</span></div>
+            <div id="page"><paper-checkbox id="pagebox"></paper-checkbox><span>Новая страница для каждой главы</span></div>
         </div>
         <div id="footer">
-            <paper-button dialog-dismiss>Cancel</paper-button>
-            <paper-button on-tap="print">Create Preview</paper-button>
+            <paper-button dialog-dismiss>Отмена</paper-button>
+            <paper-button on-tap="print">Создать предварительный просмотр</paper-button>
         </div>
 
     </template>

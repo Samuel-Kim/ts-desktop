@@ -55,17 +55,17 @@
     <template>
 
         <div id="header">
-            <h2>Feedback</h2>
-            <p><iron-icon icon="notification:wifi"></iron-icon> This will use your internet connection</p>
+            <h2>Обратная связь</h2>
+            <p><iron-icon icon="notification:wifi"></iron-icon> Будет использоваться ваше интернет-соединение</p>
         </div>
         <div id="body">
-            <input is="iron-input" bind-value="{{feedback}}" autofocus placeholder="Describe the problem you are experiencing">
+            <input is="iron-input" bind-value="{{feedback}}" autofocus placeholder="Опишите проблему, с которой вы столкнулись">
             <input is="iron-input" bind-value="{{email}}" placeholder="Email address (optional)">
-            <paper-checkbox class="checkbox" checked="{{includeLogs}}">Include application logs</paper-checkbox>
+            <paper-checkbox class="checkbox" checked="{{includeLogs}}">Включить журналы приложений</paper-checkbox>
         </div>
         <div id="footer">
-            <paper-button on-tap="close">Cancel</paper-button>
-            <paper-button on-tap="send">Confirm</paper-button>
+            <paper-button on-tap="close">Отмена</paper-button>
+            <paper-button on-tap="send">Подтвердить</paper-button>
         </div>
 
     </template>

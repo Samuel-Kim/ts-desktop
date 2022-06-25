@@ -91,11 +91,11 @@
         <div id="footer">
             <template is="dom-if" if="{{options.loading}}">
                 <template is="dom-if" if="{{options.progress}}">
-                    <paper-button on-tap="reload">Cancel</paper-button>
+                    <paper-button on-tap="reload">Отмена</paper-button>
                 </template>
             </template>
             <template is="dom-if" if="{{!options.loading}}">
-                <paper-button dialog-dismiss>Close</paper-button>
+                <paper-button dialog-dismiss>Закрыть</paper-button>
             </template>
         </div>
 
