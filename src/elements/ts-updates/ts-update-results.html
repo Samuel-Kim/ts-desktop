@@ -121,12 +121,12 @@
               <iron-icon icon="chevron-right"></iron-icon>
               <span class="click" on-tap="toleveltwo"><span>[[choices.leveltwo.name]]</span><span class="code book">(<span>[[choices.leveltwo.slug]]</span>)</span></span>
               <iron-icon icon="chevron-right"></iron-icon>
-              <span><em>Choose Source(s)</em></span>
+              <span><em>Выберите источник(и)</em></span>
           </div>
           <div id="toolbar">
-              <paper-checkbox id="select" on-change="selectAll">Select All</paper-checkbox>
-              <paper-checkbox id="unselect" on-change="unselectAll">Unselect All</paper-checkbox>
-              <paper-button raised id="confirm" on-tap="download">Download</paper-button>
+              <paper-checkbox id="select" on-change="selectAll">Выбрать все</paper-checkbox>
+              <paper-checkbox id="unselect" on-change="unselectAll">Снять все</paper-checkbox>
+              <paper-button raised id="confirm" on-tap="download">Закачать</paper-button>
           </div>
           <iron-list id="list" items="[[resultslist]]" as="item">
               <template>
@@ -211,7 +211,7 @@
           var completed = 0;
 
           mythis.set('options', {});
-          mythis.set('options.body', "Downloading Source Texts. Please wait...");
+          mythis.set('options.body', "Downloading Source Texts. Пожалуйста, подождите...");
           mythis.set('options.loading', true);
           mythis.set('options.progress', true);
           mythis.set('options.value', 0);
